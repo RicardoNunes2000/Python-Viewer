@@ -1,6 +1,5 @@
 import streamlit as st
 import json
-import pyperclip
 
 # Initialize session state
 if 'expanded_keys' not in st.session_state:
@@ -163,8 +162,5 @@ if original_json:
 if st.session_state.get('generated_code'):
     st.subheader("📝 Generated Python Code")
     st.code(st.session_state['generated_code'], language='python')
-    if st.button("📋 Copy Code"):
-        pyperclip.copy(st.session_state['generated_code'])
-        st.success("Code copied to clipboard!")
 else:
     st.info("⚠️ Please enter JSON data in the sidebar to visualize.")
